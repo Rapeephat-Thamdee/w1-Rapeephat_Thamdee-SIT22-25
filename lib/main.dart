@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amberAccent),
       ),
-      initialRoute: '/NartheeSong',
+      initialRoute: '/',
       routes: {
         '/': (context) => const MyHomepage(),
         '/NartheeSong': (context) => Nartheesong(),
