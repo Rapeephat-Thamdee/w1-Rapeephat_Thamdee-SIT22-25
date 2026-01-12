@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amberAccent),
       ),
-      initialRoute: '/NartheeSong',
+      initialRoute: '/',
       routes: {
         '/': (context) => const MyHomepage(),
         '/NartheeSong': (context) => Nartheesong(),
@@ -229,8 +229,6 @@ class MyHomepage extends StatelessWidget {
   }
 }
 
-
-
 class Nartheesong extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -243,71 +241,89 @@ class Nartheesong extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      ClipOval(
-                        child: Image.network(
-                          "https://i.pinimg.com/1200x/88/23/43/8823432b265ee5fbdeaaaf18c6075490.jpg",
-                          width: 70,
-                          height: 70,
-                          fit: BoxFit.cover,
+                  IntrinsicHeight(
+                    child: Row(
+                      children: [
+                        ClipOval(
+                          child: Image.network(
+                            "https://i.pinimg.com/1200x/88/23/43/8823432b265ee5fbdeaaaf18c6075490.jpg",
+                            width: 70,
+                            height: 70,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
 
-                      SizedBox(width: 20),
+                        SizedBox(width: 20),
 
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              Text(
-                                "5",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "5",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                "กำลังติดตาม",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                          SizedBox(width: 15),
-                          Column(
-                            children: [
-                              Text(
-                                "128.1 K",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
+                                Text(
+                                  "กำลังติดตาม",
+                                  style: TextStyle(color: Colors.grey),
                                 ),
-                              ),
-                              Text(
-                                "ผู้ติดตาม",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                          SizedBox(width: 15),
-                          Column(
-                            children: [
-                              Text(
-                                "329.9 K",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
+                              ],
+                            ),
+
+                            VerticalDivider(
+                              color: Colors.grey,
+                              thickness: 1,
+                              width: 16,
+                              indent: 17,
+                              endIndent: 17,
+                            ),
+
+                            Column(
+                              children: [
+                                Text(
+                                  "128.1 K",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                "ถูกใจและบันทึก",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                                Text(
+                                  "ผู้ติดตาม",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                              ],
+                            ),
+
+                            VerticalDivider(//เส้นก๋วยเตี๋ยว
+                              color: Colors.grey,
+                              thickness: 1,
+                              width: 16,
+                              indent: 17,
+                              endIndent: 17,
+                            ),
+
+                            Column(
+                              children: [
+                                Text(
+                                  "329.9 K",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                Text(
+                                  "ถูกใจและบันทึก",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
 
                   SizedBox(height: 20),
@@ -325,8 +341,13 @@ class Nartheesong extends StatelessWidget {
                       Icon(Icons.verified, color: Colors.blue),
                     ],
                   ),
-                  Row(children: [Icon(Icons.tiktok),Text("Rapeephat", style: TextStyle(color: Colors.grey)),Icon(Icons.arrow_drop_down),],),
-
+                  Row(
+                    children: [
+                      Icon(Icons.tiktok),
+                      Text("Rapeephat", style: TextStyle(color: Colors.grey)),
+                      Icon(Icons.arrow_drop_down),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -334,18 +355,21 @@ class Nartheesong extends StatelessWidget {
             SizedBox(height: 10),
 
             Row(
-              children: [SizedBox(width: 20,),Container(
-
-                child: ElevatedButton(
-                onPressed: () => (),
-                child: Text("ตฺิดตาม"),
-                style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.yellow,fixedSize: Size(300, 1)
+              children: [
+                SizedBox(width: 20),
+                Container(
+                  child: ElevatedButton(
+                    onPressed: () => (),
+                    child: Text("ตฺิดตาม"),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      backgroundColor: Colors.yellow,
+                      fixedSize: Size(300, 1),
+                    ),
+                  ),
                 ),
-              ),),
-                SizedBox(width: 30,),
-                Icon(Icons.share)
+                SizedBox(width: 30),
+                Icon(Icons.share),
               ],
             ),
 
